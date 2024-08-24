@@ -10,3 +10,4 @@
 /Users/barbaros/Developer/RiverBooks/src/RiverBooks.Books/obj/Debug/net8.0/RiverBooks.Books.pdb
 /Users/barbaros/Developer/RiverBooks/src/RiverBooks.Books/obj/Debug/net8.0/ref/RiverBooks.Books.dll
 /Users/barbaros/Developer/RiverBooks/src/RiverBooks.Books/obj/Debug/net8.0/RiverBooks.Books.csproj.AssemblyReference.cache
+/Users/barbaros/Developer/RiverBooks/src/RiverBooks.Books/obj/Debug/net8.0/RiverBooks.Books.sourcelink.json

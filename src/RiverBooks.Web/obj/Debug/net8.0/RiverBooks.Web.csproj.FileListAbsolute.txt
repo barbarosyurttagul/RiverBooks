@@ -37,3 +37,5 @@
 /Users/barbaros/Developer/RiverBooks/src/RiverBooks.Web/bin/Debug/net8.0/FastEndpoints.Attributes.dll
 /Users/barbaros/Developer/RiverBooks/src/RiverBooks.Web/bin/Debug/net8.0/FastEndpoints.Messaging.Core.dll
 /Users/barbaros/Developer/RiverBooks/src/RiverBooks.Web/bin/Debug/net8.0/FluentValidation.dll
+/Users/barbaros/Developer/RiverBooks/src/RiverBooks.Web/bin/Debug/net8.0/Ardalis.GuardClauses.dll
+/Users/barbaros/Developer/RiverBooks/src/RiverBooks.Web/obj/Debug/net8.0/RiverBooks.Web.sourcelink.json
