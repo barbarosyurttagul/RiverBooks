@@ -39,6 +39,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Ardalis.GuardClauses": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
             "FastEndpoints": {
               "target": "Package",
               "version": "[5.28.0, )"
