@@ -7,3 +7,34 @@ GET {{RiverBooks.Web_HostAddress}}/books
 Accept: application/json
 
 ###
+@BookID=0ab9b3de-a34e-4114-9825-3704f9b716b3
+GET {{RiverBooks.Web_HostAddress}}/books/{{BookID}}
+Accept: application/json
+
+###
+
+POST {{RiverBooks.Web_HostAddress}}/books
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "Modular Monolith New",
+  "author": "Barbaros Yurttagul",
+  "price": 13.99
+}
+
+###
+@BookID=75891670-d1c7-439a-a56e-cb0cef2295f9
+DELETE {{RiverBooks.Web_HostAddress}}/books/{{BookID}}
+
+###
+
+POST {{RiverBooks.Web_HostAddress}}/books/3fa85f64-5717-4562-b3fc-2c963f66afa6/priceHistory
+Accept: application/json
+Content-Type: application/json
+
+{
+  "price": 10.99
+}
+
+###

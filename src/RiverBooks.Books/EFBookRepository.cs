@@ -16,9 +16,9 @@ internal class EFBookRepository : IBookRepository
     return Task.CompletedTask;
   }
 
-  public Task DeleteAsync(Guid id)
+  public Task DeleteAsync(Book book)
   {
-    _dbContext.Remove(id);
+    _dbContext.Books.Remove(book);
     return Task.CompletedTask;
   }
 
