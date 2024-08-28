@@ -8,7 +8,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddFastEndpoints();
 
 // Add Module Services
-builder.Services.AddBookServices();
+builder.Services.AddBookServices(builder.Environment);
 
 var app = builder.Build();
 
@@ -23,3 +23,5 @@ app.UseHttpsRedirection();
 app.UseFastEndpoints();
 
 app.Run();
+
+public partial class Program { } //needed for tests

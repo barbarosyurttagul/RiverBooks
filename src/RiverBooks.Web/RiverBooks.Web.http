@@ -24,17 +24,17 @@ Content-Type: application/json
 }
 
 ###
-@BookID=75891670-d1c7-439a-a56e-cb0cef2295f9
+@BookID=3fa85f64-5717-4562-b3fc-2c963f66afa6
 DELETE {{RiverBooks.Web_HostAddress}}/books/{{BookID}}
 
 ###
 
-POST {{RiverBooks.Web_HostAddress}}/books/3fa85f64-5717-4562-b3fc-2c963f66afa6/priceHistory
+POST {{RiverBooks.Web_HostAddress}}/books/0ab9b3de-a34e-4114-9825-3704f9b716b3/priceHistory
 Accept: application/json
 Content-Type: application/json
 
 {
-  "price": 10.99
+  "price": -9.99
 }
 
 ###
