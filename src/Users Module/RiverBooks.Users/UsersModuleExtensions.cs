@@ -1,17 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RiverBooks.Books.Data;
 using Serilog;
 
-namespace RiverBooks.Books;
+namespace RiverBooks.Users;
 
-public static class BookServiceExtensions
+public static class UsersModuleExtensions
 {
-  public static IServiceCollection AddBookServices(
-    this IServiceCollection services,
-    IHostEnvironment env,
-    ILogger logger)
+  public static IServiceCollection AddUserModuleServices(
+      this IServiceCollection services,
+      IHostEnvironment env,
+      ILogger logger)
   {
     string connectionString;
     if (env.EnvironmentName == "Testing")
@@ -23,12 +22,13 @@ public static class BookServiceExtensions
       connectionString = Environment.GetEnvironmentVariable("RIVERBOOK_CONNECTION")!;
     }
 
-    services.AddDbContext<BookDbContext>(options =>
+    services.AddDbContext<UsersDbContext>(options =>
         options.UseSqlServer(connectionString));
-    services.AddScoped<IBookRepository, EFBookRepository>();
-    services.AddScoped<IBookService, BookService>();
 
-    logger.Information("{Module} module services registered", "Books");
+    services.AddIdentityCore<ApplicationUser>()
+      .AddEntityFrameworkStores<UsersDbContext>();
+
+    logger.Information("{Module} module services registered", "Users");
     return services;
   }
 }

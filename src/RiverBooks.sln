@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Web", "RiverBooks.Web\RiverBooks.Web.csproj", "{A8A86484-317C-480D-BD1B-89CFFAA29974}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Books", "RiverBooks.Books\RiverBooks.Books.csproj", "{C12CD9D7-63B7-49AF-88C7-2F4F55C6B45A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1EBE3DC3-D0EE-426E-8F9C-CBF757F8D98B}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -14,11 +12,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Books.Tests", "RiverBooks.Books.Tests\RiverBooks.Books.Tests.csproj", "{9676F363-D8AD-4389-B898-DE54A8969AEF}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users Module", "Users Module", "{47A5BCEC-71E6-471C-B524-78FC471DEC3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Users", "Users Module\RiverBooks.Users\RiverBooks.Users.csproj", "{91E514E2-4E20-4143-A92E-CB61C6BA040D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Books Module", "Books Module", "{CD3212D1-064D-4830-9011-8F6A556084F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Books", "Books Module\RiverBooks.Books\RiverBooks.Books.csproj", "{03E2C3EE-FC7C-4636-8954-26DD2279ECF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Books.Tests", "Books Module\RiverBooks.Books.Tests\RiverBooks.Books.Tests.csproj", "{A993C6AC-FF8A-475E-B78A-F2090098702C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,11 +44,21 @@ Global
 		{91E514E2-4E20-4143-A92E-CB61C6BA040D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91E514E2-4E20-4143-A92E-CB61C6BA040D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91E514E2-4E20-4143-A92E-CB61C6BA040D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03E2C3EE-FC7C-4636-8954-26DD2279ECF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03E2C3EE-FC7C-4636-8954-26DD2279ECF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03E2C3EE-FC7C-4636-8954-26DD2279ECF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03E2C3EE-FC7C-4636-8954-26DD2279ECF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A993C6AC-FF8A-475E-B78A-F2090098702C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A993C6AC-FF8A-475E-B78A-F2090098702C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A993C6AC-FF8A-475E-B78A-F2090098702C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A993C6AC-FF8A-475E-B78A-F2090098702C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{91E514E2-4E20-4143-A92E-CB61C6BA040D} = {47A5BCEC-71E6-471C-B524-78FC471DEC3C}
+		{03E2C3EE-FC7C-4636-8954-26DD2279ECF7} = {CD3212D1-064D-4830-9011-8F6A556084F0}
+		{A993C6AC-FF8A-475E-B78A-F2090098702C} = {CD3212D1-064D-4830-9011-8F6A556084F0}
 	EndGlobalSection
 EndGlobal

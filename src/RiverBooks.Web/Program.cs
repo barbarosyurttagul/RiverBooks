@@ -1,14 +1,27 @@
 using RiverBooks.Books;
 using FastEndpoints;
+using RiverBooks.Users;
+using Serilog;
+
+var logger = Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .CreateLogger();
+
+logger.Information("Starting web host");
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((_, config) =>
+  config.ReadFrom.Configuration(builder.Configuration));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddFastEndpoints();
 
 // Add Module Services
-builder.Services.AddBookServices(builder.Environment);
+builder.Services.AddBookServices(builder.Environment, logger);
+builder.Services.AddUserModuleServices(builder.Environment, logger);
 
 var app = builder.Build();
 
