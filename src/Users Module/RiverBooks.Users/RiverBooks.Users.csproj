@@ -16,4 +16,8 @@
     <PackageReference Include="Ardalis.GuardClauses" Version="4.6.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Books Module\RiverBooks.Books\RiverBooks.Books.csproj" />
+  </ItemGroup>
+
 </Project>
