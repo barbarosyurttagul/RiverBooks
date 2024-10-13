@@ -11,7 +11,8 @@ public static class BookServiceExtensions
   public static IServiceCollection AddBookServices(
     this IServiceCollection services,
     IHostEnvironment env,
-    ILogger logger)
+    ILogger logger,
+    List<System.Reflection.Assembly> mediatRAssemblies)
   {
     string connectionString;
     if (env.EnvironmentName == "Testing")
@@ -25,8 +26,12 @@ public static class BookServiceExtensions
 
     services.AddDbContext<BookDbContext>(options =>
         options.UseSqlServer(connectionString));
+
     services.AddScoped<IBookRepository, EFBookRepository>();
     services.AddScoped<IBookService, BookService>();
+
+    // if using MediatR in this module, add any assmeblies that contain handlers to the module
+    mediatRAssemblies.Add(typeof(BookServiceExtensions).Assembly);
 
     logger.Information("{Module} module services registered", "Books");
     return services;

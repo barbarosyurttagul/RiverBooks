@@ -2,6 +2,9 @@ using RiverBooks.Books;
 using FastEndpoints;
 using RiverBooks.Users;
 using Serilog;
+using FastEndpoints.Security;
+using FastEndpoints.Swagger;
+using System.Reflection;
 
 var logger = Log.Logger = new LoggerConfiguration()
     .Enrich.FromLogContext()
@@ -15,26 +18,33 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((_, config) =>
   config.ReadFrom.Configuration(builder.Configuration));
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddFastEndpoints();
+builder.Services.AddFastEndpoints()
+  .AddAuthenticationJwtBearer(o =>
+  {
+    o.SigningKey = builder.Configuration["Auth:JwtSecret"];
+  })
+  .AddAuthorization()
+  .SwaggerDocument();
 
 // Add Module Services
-builder.Services.AddBookServices(builder.Environment, logger);
-builder.Services.AddUserModuleServices(builder.Environment, logger);
+List<Assembly> mediatRAssemblies = [typeof(Program).Assembly];
+builder.Services.AddBookServices(builder.Environment, logger, mediatRAssemblies);
+builder.Services.AddUserModuleServices(builder.Environment, logger, mediatRAssemblies);
+
+// Set MediatR
+builder.Services.AddMediatR(cfg =>
+{
+  cfg.RegisterServicesFromAssemblies(mediatRAssemblies.ToArray());
+});
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-  app.UseSwagger();
-  app.UseSwaggerUI();
-}
+app.UseAuthentication()
+  .UseAuthorization();
 
-app.UseHttpsRedirection();
+app.UseFastEndpoints()
+  .UseSwaggerGen();
 
-app.UseFastEndpoints();
-
-app.Run();
+await app.RunAsync();
 
 public partial class Program { } //needed for tests

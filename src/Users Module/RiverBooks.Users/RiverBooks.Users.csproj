@@ -5,10 +5,15 @@
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspnetCore.App" />
+    <PackageReference Include="Ardalis.Result" Version="10.0.0" />
+    <PackageReference Include="FastEndpoints.Security" Version="5.30.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
+    <PackageReference Include="FastEndpoints" Version="5.30.0" />
+    <PackageReference Include="Ardalis.GuardClauses" Version="4.6.0" />
   </ItemGroup>
 
 </Project>
