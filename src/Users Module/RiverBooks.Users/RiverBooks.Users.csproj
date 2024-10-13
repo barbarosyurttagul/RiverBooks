@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Books Module\RiverBooks.Books\RiverBooks.Books.csproj" />
+    <ProjectReference Include="..\..\Books Module\RiverBooks.Books.Contracts\RiverBooks.Books.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
