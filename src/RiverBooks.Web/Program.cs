@@ -5,6 +5,7 @@ using Serilog;
 using FastEndpoints.Security;
 using FastEndpoints.Swagger;
 using System.Reflection;
+using RiverBooks.OrderProcessing;
 
 var logger = Log.Logger = new LoggerConfiguration()
     .Enrich.FromLogContext()
@@ -28,8 +29,9 @@ builder.Services.AddFastEndpoints()
 
 // Add Module Services
 List<Assembly> mediatRAssemblies = [typeof(Program).Assembly];
-builder.Services.AddBookServices(builder.Environment, logger, mediatRAssemblies);
+builder.Services.AddBookModuleServices(builder.Environment, logger, mediatRAssemblies);
 builder.Services.AddUserModuleServices(builder.Environment, logger, mediatRAssemblies);
+builder.Services.AddOrderProcessingModuleServices(builder.Environment, logger, mediatRAssemblies);
 
 // Set MediatR
 builder.Services.AddMediatR(cfg =>

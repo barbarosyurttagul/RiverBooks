@@ -61,7 +61,7 @@ Content-Type: application/json
 
 ###
 
-@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJzdGV2ZUB0ZXN0LmNvbSIsImlhdCI6MTcyODgyNzgwNywiZXhwIjoxNzI4ODMxNDA3LCJuYmYiOjE3Mjg4Mjc4MDd9.jx54wlZqvLS0tXQKNqHcBKOUqyTfJuV0g68LWacY_rE
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJzdGV2ZUB0ZXN0LmNvbSIsImlhdCI6MTczMDA0MzUyMSwiZXhwIjoxNzMwMDQ3MTIxLCJuYmYiOjE3MzAwNDM1MjF9.leHj_DFeXLzXwWrBUgtUMafg2L68joQQYsc9hArFAss
 
 
 # Add Item to Cart
@@ -81,5 +81,25 @@ Content-Type: application/json
 GET {{RiverBooks.Web_HostAddress}}/cart
 Accept: application/json
 Authorization: Bearer {{token}}
+
+###
+
+#List all orders
+GET {{RiverBooks.Web_HostAddress}}/orders
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# Checkout Cart
+POST {{RiverBooks.Web_HostAddress}}/cart/checkout
+Accept: text/plain
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "shippingAddressId": "e7bdd288-b0e2-41e1-8c5d-b76ce2a3335d",
+  "billingAddressId": "e7bdd288-b0e2-41e1-8c5d-b76ce2a3335d"
+}
 
 ###
